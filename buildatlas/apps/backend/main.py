@@ -13,13 +13,13 @@ import google.generativeai as genai
 load_dotenv()
 if os.getenv("GEMINI_API_KEY"):
     genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 app = FastAPI()
 
 # STEP 2 — LOAD ALL MODELS ON STARTUP
 try:
-    model_dir = os.path.join(os.path.dirname(__file__), "../ml/models")
+    model_dir = os.path.join(os.path.dirname(__file__), "../../packages/ml/models")
     cost_model = joblib.load(os.path.join(model_dir, "cost_model.pkl"))
     duration_model = joblib.load(os.path.join(model_dir, "duration_model.pkl"))
     enc_project_type = joblib.load(os.path.join(model_dir, "encoder_project_type.pkl"))
