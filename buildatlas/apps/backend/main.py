@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import google.generativeai as genai
-
+ 
 # STEP 1 — SETUP AND IMPORTS
 load_dotenv()
 if os.getenv("GEMINI_API_KEY"):
